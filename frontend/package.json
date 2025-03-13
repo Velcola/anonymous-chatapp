@@ -1,0 +1,15 @@
+{
+  "name": "Anonymous chat application",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Patrick",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "electron": "^35.0.1"
+  }
+}

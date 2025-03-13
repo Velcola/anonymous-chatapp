@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat (Tú eres: 'nombre')</title>
+    <link rel="stylesheet" href="styles_chat.css">
+</head>
+<body>
+    <div class="container">
+        <div id="messages">
+            <div class="message">
+                <img src="https://i.pinimg.com/736x/c0/74/9b/c0749b7cc401421662ae901ec8f9f660.jpg" alt="PFP">
+                <div class="message-info">
+                    <h4 class="username">Anonymous</h4>
+                    <div class="message-content">
+                        <p>Hola! Este es un mensaje.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="input-container">
+            <input type="text" id="messageInput" placeholder="Escribe un mensaje..">
+            <button id="sendBtn">Enviar</button>
+        </div>
+    </div>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="chat_renderer.js"></script>
+</body>
+</html>
