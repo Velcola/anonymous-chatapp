@@ -21,6 +21,13 @@ h1 {
     padding-bottom: 10px;
 }
 
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
 .container {
     background-color: #252736;
     border: 1px;
@@ -87,4 +94,8 @@ button:hover {
 button:active {
     background-color: #4A4BD8;
     transform: scale(0.98);
+}
+
+#error {
+    color: red;
 }

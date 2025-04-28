@@ -11,24 +11,33 @@ const io = new Server(server, {
 });
 
 let users = {};
-let messages = {};
+let messages = []; // Store messages in an array
 io.on("connection", (socket) => {
     socket.on("set-username", (username) => {
         users[socket.id] = username;
         console.log(`Username set for ${socket.id}: ${username}`);
     });
 
+    // Handle 'get-messages' event
+    socket.on("get-messages", () => {
+        socket.emit("messages", messages); // Send all messages to the client
+    });
+
     socket.on("message", (data) => {
         const { user, text } = data;
         io.emit("message", { user, text });
-        messages["message"] = data;
-        console.log(messages)
+        messages.push(data); // Store the message in the messages array
+        console.log(messages);
     });
 
     socket.on("disconnect", () => {
         console.log("User disconnected:", socket.id, `(${users[socket.id]})`);
         delete users[socket.id];
     });
+});
+
+app.get('/status', (req, res) => {
+    res.send('Server is up :)');
 });
 
 const PORT = 3000;

@@ -1,15 +1,29 @@
 {
-  "name": "Anonymous chat application",
+  "name": "AnonymousChatApp",
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "electron-builder", 
+    "pack": "electron-packager ."
   },
   "author": "Patrick",
   "license": "ISC",
   "description": "",
-  "dependencies": {
-    "electron": "^35.0.1"
+  "devDependencies": {
+    "electron": "^35.0.3",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.patrick.anonchat",
+    "productName": "AnonymousChatApp",
+    "files": [
+      "**/*",
+      "!**/*.map"
+    ],
+    "directories": {
+      "buildResources": "build"
+    }
   }
 }
